@@ -1,11 +1,11 @@
 ESPHome ESP32-2432S028R CYD Touch Display for Projector Control
 ======
 ### Overview
-This project utilizes an ESP32-2432S028R to control a projector through a custom touch interface built using ESPHome. The control board features an integrated ILI9341 display with touch support, and it allows users to power the projector on or off, switch inputs and adjust the volume via UART connection. The UART commands provided are for Epson projectors but they can easily be modified to accommodate different projector models as needed. 
+This project utilizes a JC2432W328 capacitive touch ESP32 board to control a projector through a custom touch interface built using ESPHome. The control board features an integrated ILI9341 display with touch support, and it allows users to power the projector on or off, switch inputs and adjust the volume via UART connection. The UART commands provided are for Epson projectors but they can easily be modified to accommodate different projector models as needed. 
 ### Hardware:
- - ESP32-2432S028R
+ - ESP32-JC2432W328
  - RS-232 to TTL UART Module
- - RJ45 Screw Terminal adapters
+ - RJ45 Screw Terminal adapters x2
  - DC 5v 1A power adapter
 
 ### Installation
