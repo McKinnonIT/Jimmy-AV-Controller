@@ -1,0 +1,39 @@
+esphome:
+  name: 
+  friendly_name: 
+
+esp32:
+  board: esp32dev
+  framework:
+    type: arduino
+#  set log to NONE for performance improvements
+logger:
+  level: NONE
+
+
+# Enable Home Assistant API and Configure Turn Off Action
+
+api:
+  encryption:
+    key: ""
+ota:
+  - platform: esphome
+    password: !secret esp_ota_pwd
+
+wifi:
+  ssid: !secret wifi_ssid
+  password: !secret wifi_password
+  domain: !secret domain
+
+captive_portal:
+
+# Display and Touchscreen Config
+
+<<: !include common/CapacitiveCYD.yaml
+
+# LVGL Graphics Display Config
+<<: !include common/lvgl.yaml
+
+# Projector UART commands
+<<: !include common/epsonswitch.yaml
+    
