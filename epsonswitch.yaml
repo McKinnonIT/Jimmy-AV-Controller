@@ -1,0 +1,45 @@
+switch:
+  - platform: uart
+    name: "Power ON"
+    data: "PWR ON\r\n, PWR ON\r\n"
+    id: projectorpoweron
+
+  - platform: uart
+    name: "Power OFF"
+    data: "PWR OFF\r\n, PWR OFF\r\n"
+    id: projectorpoweroff
+
+  - platform: uart
+    name: "HDMI 3"
+    data: "SOURCE C0\r\n, SOURCE C0\r\n"
+    id: projectorhdmi3
+
+  - platform: uart
+    name: "HDMI 1"
+    data: "SOURCE 30\r\n, SOURCE 30\r\n"
+    id: projectorhdmi1
+
+  - platform: uart
+    name: "HDMI 2"
+    data: "SOURCE A0\r\n, SOURCE A0\r\n"
+    id: projectorhdmi2
+
+  - platform: uart
+    name: "Computer1"
+    data: "SOURCE 11\r\n"
+    id: projectorcomputer1
+
+  - platform: uart
+    name: "Computer2"
+    data: "SOURCE 21\r\n"
+    id: projectorcomputer2
+
+  - platform: uart
+    name: "Volume Increase"
+    data: "VOL INC\r\n"
+    id: projectorvolumeincrease
+
+  - platform: uart
+    name: "Volume Decrease"
+    data: "VOL Dec\r\n"
+    id: projectorvolumedecrease
