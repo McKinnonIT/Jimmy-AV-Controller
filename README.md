@@ -7,6 +7,7 @@ This project utilizes a JC2432W328 capacitive touch ESP32 board to control a pro
  - RS-232 to TTL UART Module
  - RJ45 Screw Terminal adapters x2
  - DC 5v 1A power adapter
+ - JST PH 4-Pin to Male Header Cable - I2C STEMMA Cable
 
 ### Installation
 
