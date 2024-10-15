@@ -8,10 +8,12 @@ This project utilizes a JC2432W328 capacitive touch ESP32 board to control a pro
  - RJ45 Screw Terminal adapters x2
  - DC 5v 1A power adapter
  - JST PH 4-Pin to Male Header Cable - I2C STEMMA Cable
+ - Jumper Wires (M/F)
 
 ### Installation
 
-We chose to use the existing Ethernet cables running from the projector to the control board's mounting location, utilizing RJ45 screw terminals at both ends for convenience. However, alternative cabling options are possible. The key requirement is to provide 5V power, ground, TX and RX to both RS232 TTL and the board. We wired the power adapter to the same pins as the RS232 TTL and connected the TX and RX terminals to the corresponding GPIO pins on the board. This setup delivers power to the ESP32 while allowing it to send UART commands to the RS232 TTL, which is connected to the projector.
+We chose to use the existing Ethernet cables running from the projector to the control board's mounting location, utilizing RJ45 screw terminals at both ends for convenience. However, alternative cabling options are possible. The key requirement is to provide 5V power, ground, TX and RX to both RS232 TTL and the board. 
+At the wallplate end we connect the JST 4-Pin to the board and connect the headers to the RJ Terminal adapter, at the projector end we use the jumper wires to connect the RS232 module to the correct GND, 5v, TX and RX pins as well as splicing in 5v and Gnd from the power adapter (we used an old chromecast power adapter). This setup delivers power to the ESP32 while allowing it to send UART commands to the RS232 TTL, which is connected to the projector.
 
 
 
