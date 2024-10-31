@@ -13,6 +13,7 @@ This project utilizes a JC2432W328 capacitive touch ESP32 board to control a pro
  - 20AWG Ferrules x10
  - 3D Printed Wallplate and Cover
  - 3D Printed Breakout Box
+ - [1m DB9 RS232 Serial Null Modem Cable F/F](https://www.mwave.com.au/product/startech-1m-black-db9-rs232-serial-null-modem-cable-ff-ab86700)
 
 ### Installation
 
