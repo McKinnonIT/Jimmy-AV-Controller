@@ -16,16 +16,16 @@ This project utilizes a JC2432W328 capacitive touch or 2432S028R resistive touch
  - [1m DB9 RS232 Serial Null Modem Cable F/F](https://www.mwave.com.au/product/startech-1m-black-db9-rs232-serial-null-modem-cable-ff-ab86700)
 
 ### Installation
-Step 1
-Flash the ESP32 touch board with relevent code and ensure buttons are displayed and react to user input
-Step 2 
-Connect JST cable to RJ45 terminal block
-Step 3
-Wire the Female DC, RS232 and R45 terminal block and secure in breakout box
-Step 4
-Install wallplate and ESP32 board in desired location and connect RJ45 cable
-Step 5
-Place breakout box in desired location and connect power, DB9 cable to projector and RJ45 cable
-Step 6
-Installation is now done, test the project is responding to commands sent from the ESP32 board
+#### Step 1
+- Flash the ESP32 touch board with relevent code and ensure buttons are displayed and react to user input
+##### Step 2 
+- Connect JST cable to RJ45 terminal block
+#### Step 3
+- Wire the Female DC, RS232 and R45 terminal block and secure in breakout box
+#### Step 4
+- Install wallplate and ESP32 board in desired location and connect RJ45 cable
+#### Step 5
+- Place breakout box in desired location and connect power, DB9 cable to projector and RJ45 cable
+#### Step 6
+- Installation is now done, test the projector is responding to commands sent from the ESP32 board
 
