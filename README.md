@@ -9,11 +9,12 @@ This project utilizes a JC2432W328 capacitive touch or 2432S028R resistive touch
  - [Female DC 5.5 2.1mm terminal adapter](https://vi.aliexpress.com/item/1005006755773620.html)
  - [DC 5v 1A power adapter](https://vi.aliexpress.com/item/32722341492.html)
  - [JST PH 4-Pin to Male Header Cable - I2C STEMMA Cable](https://core-electronics.com.au/jst-ph-4-pin-to-male-header-cable-i2c-stemma-cable-200mm.html)
+ - [1m DB9 RS232 Serial Null Modem Cable F/F](https://www.mwave.com.au/product/startech-1m-black-db9-rs232-serial-null-modem-cable-ff-ab86700)
  - Electrical Wire 20AWG
  - 20AWG Ferrules x10
  - 3D Printed Wallplate and Cover
  - 3D Printed Breakout Box
- - [1m DB9 RS232 Serial Null Modem Cable F/F](https://www.mwave.com.au/product/startech-1m-black-db9-rs232-serial-null-modem-cable-ff-ab86700)
+
 
 ### Installation
 #### Step 1
