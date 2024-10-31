@@ -10,6 +10,8 @@ This project utilizes a JC2432W328 capacitive touch ESP32 board to control a pro
  - [DC 5v 1A power adapter](https://vi.aliexpress.com/item/32722341492.html)
  - [JST PH 4-Pin to Male Header Cable - I2C STEMMA Cable](https://core-electronics.com.au/jst-ph-4-pin-to-male-header-cable-i2c-stemma-cable-200mm.html)
  - Wire
+ - 3D Printed wallplate and cover
+ - Box
 
 ### Installation
 
