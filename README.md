@@ -11,7 +11,7 @@ This project utilizes a JC2432W328 capacitive touch ESP32 board to control a pro
  - [JST PH 4-Pin to Male Header Cable - I2C STEMMA Cable](https://core-electronics.com.au/jst-ph-4-pin-to-male-header-cable-i2c-stemma-cable-200mm.html)
  - Electrical Wire 20AWG
  - 20AWG Ferrules x10
- - 3D Printed wallplate and cover
+ - 3D Printed Wallplate and Cover
  - 3D Printed Breakout Box
 
 ### Installation
