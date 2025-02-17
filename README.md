@@ -1,32 +1,21 @@
-ESPHome Jimmy CYD Touch Display for Projector Control
+Jimmy AV Controller
 ======
-### Overview
-This project utilizes a JC2432W328 capacitive touch or 2432S028R resistive touch ESP32 board to control a projector through a custom touch interface built using ESPHome. The control board features an integrated ILI9341 display with touch support, and it allows users to power the projector on or off, switch inputs and adjust the volume via UART connection. The UART commands provided are for Epson projectors but they can easily be modified to accommodate different projector models as needed. 
-### Components:
- - [ESP32-JC2432W328](https://vi.aliexpress.com/item/1005006948064622.html) or [ESP32-2432S028R](https://vi.aliexpress.com/item/1005007095061705.html)
- - [RS-232 to TTL UART Module](https://vi.aliexpress.com/item/1005006807931160.html)
- - [RJ45 Screw Terminal adapters x2](https://vi.aliexpress.com/item/1005006037699995.html)
- - [Female DC 5.5 2.1mm terminal adapter](https://vi.aliexpress.com/item/1005006755773620.html)
- - [DC 5v 1A power adapter](https://vi.aliexpress.com/item/32722341492.html)
- - [1m DB9 RS232 Serial Null Modem Cable F/F](https://www.mwave.com.au/product/startech-1m-black-db9-rs232-serial-null-modem-cable-ff-ab86700)
- - Electrical Wire 20AWG
- - 20AWG Ferrules x10
- - 24AWG Ferrules x4
- - 3D Printed Wallplate and Cover
- - 3D Printed Breakout Box
+### Project Overview
+The Jimmy AV Controller is an open, customizable solution for projector and AV control over RS232. It is designed to address the limitations of existing commercial systems—closed ecosystems, high costs, poor interfaces, and no easy way to monitor usage and automate groups of projectors & TV’s.
 
+It’s designed for use in classrooms, conference rooms and anywhere you want RS232 control over AV equipment.
+With the availability of touchscreen ESP32 boards like the JC2432W328 (capacitive) and 2432S028R (resistive) with native LVGL support in ESPHome, we developed a fully customizable, user-friendly control panel that integrates with ESPHome and Home Assistant for streamlined projector management. We built on ESPHome due to its wide adoption and easy to maintain with so many examples and projects already online.
 
-### Installation
-#### Step 1
-- Flash the ESP32 touch board with relevent code and ensure buttons are displayed and react to user input
-##### Step 2 
-- Connect JST cable to RJ45 terminal block
-#### Step 3
-- Wire the Female DC, RS232 and R45 terminal block and secure in breakout box
-#### Step 4
-- Install wallplate and ESP32 board in desired location and connect RJ45 cable
-#### Step 5
-- Place breakout box in desired location and connect power, DB9 cable to projector and RJ45 cable
-#### Step 6
-- Installation is now done, test the projector is responding to commands sent from the ESP32 board
+### How it works:
+The Jimmy AV Control System uses an ESP32 touchscreen panel to send RS232 commands to projectors and AV equipment, integrating seamlessly with ESPHome and Home Assistant for easy automation and monitoring.
+
+At its core, the system consists of:
+
+- ESP32 touchscreen (capacitive or resistive) flashed with ESPHome
+- 3D-printed wall plate & breakout box for secure mounting
+- RS232 to TTL UART breakout box to communicate with projectors / TV’s
+- RJ45 Ethernet cables to connect breakout box to wall plate touchscreen
+- Generic Power supply
+
+By using ESPHome web flasher, setup and configuration of the Jimmy is very simple. 
 
