@@ -25,11 +25,9 @@ wifi:
   password: !secret wifi_password
   domain: !secret domain
 
-captive_portal:
-
 # Display and Touchscreen Config
 
-<<: !include common/CapacitiveCYD.yaml
+<<: !include common/capacitive.yaml
 
 # LVGL Graphics Display Config
 <<: !include common/lvgl.yaml
