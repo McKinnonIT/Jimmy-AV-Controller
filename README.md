@@ -56,7 +56,7 @@ Ensure capacitive.yaml resistive.yaml lvgl.yaml and epsonswitch.yaml(or other pr
          password: !secret wifi_password
 
        # Display and Touchscreen Config
-       <<: !include common/CapacitiveCYD.yaml
+       <<: !include common/capacitive.yaml
 
        # LVGL Graphics Display Config
        <<: !include common/lvgl.yaml
