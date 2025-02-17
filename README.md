@@ -17,5 +17,7 @@ At its core, the system consists of:
 - RJ45 Ethernet cables to connect breakout box to wall plate touchscreen
 - Generic Power supply
 
-By using ESPHome web flasher, setup and configuration of the Jimmy is very simple. 
+By using ESPHome web flasher, setup and configuration of the Jimmy is very simple.
+
+![alt text](https://github.com/McKinnonIT/Jimmy-AV-Controller/blob/main/JimmyAVDiagram.png)
 
