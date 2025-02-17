@@ -21,12 +21,16 @@ By using ESPHome web flasher, setup and configuration of the Jimmy is very simpl
 
 ![alt text](https://github.com/McKinnonIT/Jimmy-AV-Controller/blob/main/JimmyAVDiagram.png)
 
-### Assembly:
+### Intallation:
+  1. Wire JST cable to RJ45 terminal as below and plug into flashed touchscreen
+  2. Wire the Female DC terminal adapter, RS232 TTL Module and RJ45 terminal block and secure in printed breakout box
+  3. Secure 3D printed wallplate to wall, connect ethernet cable, screw in touchscreen then install wallplate cover
+  4. Place breakout box in secure location then connect DB9 to projector, plug in the other end of the ethernet cable and plug in power adapter
 
 ### Flashing Touchscreen:
 
 #### Using ESPHome:
-Ensure capacitive.yaml resistive.yaml lvgl.yaml and epsonswitch.yaml(or other projector commands) are added to the esphome/common directory.
+  Ensure capacitive.yaml resistive.yaml lvgl.yaml and epsonswitch.yaml(or other projector commands) are added to the esphome/common directory.
   1. Connect to the touchscreen using USB C cable, in  ESPhome select new device, enter desired name then connect selecting the USB serial device
   2. Modify and ota, api or wifi password secrets as required, change logger level to NONE and add the required include yaml files
        ``` 
@@ -65,6 +69,13 @@ Ensure capacitive.yaml resistive.yaml lvgl.yaml and epsonswitch.yaml(or other pr
        <<: !include common/epsonswitch.yaml
       ```
    3. Install this modified yaml onto the touchscreen, the display should now work and react to user input.
+
+#### Standalone using ESPHome Web:
+  Use if WiFi connectivity is not required for OTA or HomeAssistant logging
+   1. Go to web.esphome.io
+   2. Connect USB cable to touchscreen and click connect
+   3. Select Install and install jimmy-av-controller.factory.bin or custom .bin file
+
 
        
 
