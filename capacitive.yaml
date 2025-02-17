@@ -1,0 +1,176 @@
+# Set up global varible to track recent touch
+globals:
+  - id: recent_touch
+    type: bool
+    restore_value: no
+    initial_value: "true"
+
+# Set up backlight
+light:
+  - platform: monochromatic
+    output: backlight_pin
+    name: Display Backlight
+    id: backlight
+    restore_mode: ALWAYS_ON
+# Set up the LED on the back and turn it off by default
+  - platform: rgb
+    name: LED
+    id: led
+    red: output_red
+    green: output_green
+    blue: output_blue
+    restore_mode: ALWAYS_OFF
+
+# Configure UART pins and set required baud rate
+uart:
+  tx_pin: GPIO1
+  rx_pin: GPIO3
+  baud_rate: 9600
+
+# Setup binary sensor template
+binary_sensor:
+
+  - platform: template
+    name: powerstate
+    id: powerstate
+    publish_initial_state: true
+    on_press:
+      # Power is ON, flash green for 5 seconds, then stay green
+      - repeat:
+          count: 25
+          then:
+            - light.turn_on:
+                id: led
+                red: 0%
+                green: 100%
+                blue: 0%
+            - delay: 500ms
+            - light.turn_off:
+                id: led
+            - delay: 500ms
+      # After 5 seconds, keep the LED green
+      - light.turn_on:
+          id: led
+          red: 0%
+          green: 100%
+          blue: 0%
+    
+    on_release:
+      # Power is OFF, flash red for 5 seconds, then stay red
+      - repeat:
+          count: 5
+          then:
+            - light.turn_on:
+                id: led
+                red: 100%
+                green: 0%
+                blue: 0%
+            - delay: 500ms
+            - light.turn_off:
+                id: led
+            - delay: 500ms
+
+      # After 5 seconds, keep the LED red
+      - light.turn_on:
+          id: led
+          red: 100%
+          green: 0%
+          blue: 0%
+
+# Setup SPI for the display.
+spi:
+  - id: tft
+    clk_pin: GPIO14
+    mosi_pin: GPIO13
+    miso_pin: GPIO12
+
+# Setup i2c bus for capacitive touch
+i2c:
+  sda: 33
+  scl: 32  
+  scan: true
+  id: bus_a
+
+# Setup a pin to control the backlight and channels for the red/green/blue of the LED
+output:
+  - platform: ledc
+    pin: GPIO27
+    id: backlight_pin
+  - platform: ledc
+    id: output_red
+    pin: GPIO4
+    inverted: true
+  - platform: ledc
+    id: output_green
+    pin: GPIO16
+    inverted: true
+  - platform: ledc
+    id: output_blue
+    pin: GPIO17
+    inverted: true
+
+#
+
+interval:
+    # Every 30 seconds check for recent touch
+    # dim the backlight to 50% if not
+  - interval: 30s
+    then:
+      - if:
+          condition:
+            lambda: |-
+                return !id(recent_touch);
+          then: 
+            - light.control:
+                id: backlight
+                brightness: 50%
+          else:
+            - lambda: |-
+                id(recent_touch) = false;
+
+
+# Configure Display in landscape mode
+display:
+  - platform: ili9xxx
+    id: my_display
+    model: ST7796
+    spi_id: tft
+    cs_pin: GPIO15
+    dc_pin: GPIO2
+    invert_colors: false
+    dimensions:
+      width: 320
+      height: 240
+    auto_clear_enabled: false
+    update_interval: never
+    data_rate: 40MHz
+    transform:
+      swap_xy: true
+      mirror_x: false
+      mirror_y: true    
+
+# Configure touchscreen driver and calibrate
+
+touchscreen:
+  platform: cst816
+  id: my_touch
+  update_interval: 50ms
+  calibration:
+    x_min: 0
+    x_max: 240
+    y_min: 9
+    y_max: 320
+  transform:
+    swap_xy: true
+    mirror_x: false
+    mirror_y: true
+  on_touch:
+      then:
+        - light.turn_on:
+            id: backlight
+            brightness: 100%
+        - lambda: |-
+            id(recent_touch) = true;
+        - light.turn_on:
+            id: led
+            brightness: 70%
