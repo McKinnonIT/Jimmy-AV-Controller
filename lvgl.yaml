@@ -11,8 +11,7 @@ lvgl:
   default_font: montserrat_22
   theme:
     button:
-      default:
-        bg_color: 0x808080
+      bg_color: 0x808080
       pressed:
         border_color: 0xFFFF00
       checked:
