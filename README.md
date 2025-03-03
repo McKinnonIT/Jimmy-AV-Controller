@@ -32,7 +32,7 @@ By using ESPHome web flasher, setup and configuration of the Jimmy is very simpl
 #### Using ESPHome:
   Ensure capacitive.yaml resistive.yaml lvgl.yaml and epsonswitch.yaml(or other projector commands) are added to the esphome/common directory.
   1. Connect to the touchscreen using USB C cable, in  ESPhome select new device, enter desired name then connect selecting the USB serial device
-  2. Modify and ota, api or wifi password secrets as required, change logger level to NONE and add the required include yaml files
+  2. Modify and add ota, api or wifi passwords/secrets as required, change logger level to NONE and add the required include yaml files
        ``` 
        esphome:
          name: 
@@ -71,8 +71,8 @@ By using ESPHome web flasher, setup and configuration of the Jimmy is very simpl
    3. Install this modified yaml onto the touchscreen, the display should now work and react to user input.
 
 #### Standalone using ESPHome Web:
-  Use if WiFi connectivity is not required for OTA or HomeAssistant logging
-   1. Go to web.esphome.io
+  Can be used if WiFi connectivity is not required for OTA or HomeAssistant logging
+   1. Go to [web.esphome.io](https://web.esphome.io)
    2. Connect USB cable to touchscreen and click connect
    3. Select Install and install jimmy-av-controller.factory.bin or custom .bin file
 
