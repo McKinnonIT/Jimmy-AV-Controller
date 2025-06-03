@@ -22,7 +22,7 @@ By using ESPHome web flasher, setup and configuration of the Jimmy is very simpl
 ![alt text](https://github.com/McKinnonIT/Jimmy-AV-Controller/blob/main/JimmyAVDiagram.png)
 
 ### Intallation:
-  1. Wire JST cable to RJ45 terminal as below and plug into flashed touchscreen
+  1. Wire JST cable to RJ45 terminal as shown and plug into flashed touchscreen
   2. Wire the Female DC terminal adapter, RS232 TTL Module and RJ45 terminal block and secure in printed breakout box
   3. Secure 3D printed wallplate to wall, connect ethernet cable, screw in touchscreen then install wallplate cover
   4. Place breakout box in secure location then connect DB9 to projector, plug in the other end of the ethernet cable and plug in power adapter
