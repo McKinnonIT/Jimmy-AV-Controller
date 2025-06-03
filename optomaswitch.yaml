@@ -1,0 +1,58 @@
+switch:
+
+#Power
+ - platform: uart
+   name: "Power ON"
+   data: "~0000 1\r\n"
+   id: projectorpoweron
+   
+ - platform: uart
+   name: "Power OFF"
+   data: "~0000 2\r\n"
+   id: projectorpoweroff
+
+
+#Chromecast   
+ - platform: uart
+   name: "HDMI 1"
+   data: "~0012 15\r\n"
+   id: projectorhdmi1
+   
+
+#HDMI-1
+ - platform: uart
+   name: "HDMI 2"
+   data: "~0012 1\r\n"
+   id: projectorhdmi2
+   
+
+#HDMI-2
+ - platform: uart
+   name: "HDMI 3"
+   data: "SOURCE C0\r\n"
+   id: projectorhdmi3
+
+#VGA-1
+ - platform: uart
+   name: "Computer1"
+   data: "SOURCE 10\r\n"
+   id: projectorcomputer1
+
+#VGA-2
+ - platform: uart
+   name: "Computer2"
+   data: "SOURCE 21\r\n"
+   id: projectorcomputer2
+
+#Vol +
+ - platform: uart
+   name: "Volume Increase"
+   data: "~00140 18\r\n"
+   id: projectorvolumeincrease
+
+#Vol -
+ - platform: uart
+   name: "Volume Decrease"
+   data: "~00140 17\r\n"
+   id: projectorvolumedecrease
+   
