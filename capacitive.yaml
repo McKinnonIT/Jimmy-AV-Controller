@@ -157,13 +157,13 @@ touchscreen:
   update_interval: 50ms
   calibration:
     x_min: 0
-    x_max: 240
-    y_min: 9
-    y_max: 320
+    x_max: 307
+    y_min: 0
+    y_max: 244
   transform:
-    swap_xy: true
-    mirror_x: false
-    mirror_y: true
+    swap_xy: True
+    mirror_x: True
+    mirror_y: False
   on_touch:
       then:
         - light.turn_on:
