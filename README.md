@@ -1,86 +1,97 @@
-Jimmy AV Controller
-======
-## Project Overview
-The Jimmy AV Controller is an open, customizable solution for projector and AV control over RS232. It is designed to address the limitations of existing commercial systems—closed ecosystems, high costs, poor interfaces, and no easy way to monitor usage and automate groups of projectors & TV’s.
+# 🎛️ Jimmy AV Controller
 
-It’s designed for use in classrooms, conference rooms and anywhere you want RS232 control over AV equipment.
-With the availability of touchscreen ESP32 boards like the JC2432W328 (capacitive) and 2432S028R (resistive) with native LVGL support in ESPHome, we developed a fully customizable, user-friendly control panel that integrates with ESPHome and Home Assistant for streamlined projector management. We built on ESPHome due to its wide adoption and easy to maintain with so many examples and projects already online.
+## 🧩 Project Overview  
+The Jimmy AV Controller is an open, customizable solution for projector and AV control over RS232. It is designed to address the limitations of existing commercial systems—closed ecosystems, high costs, poor interfaces, and no easy way to monitor usage and automate groups of projectors & TVs.
 
-### How it works:
-The Jimmy AV Control System uses an ESP32 touchscreen panel to send RS232 commands to projectors and AV equipment, integrating seamlessly with ESPHome and Home Assistant for easy automation and monitoring.
+It’s designed for use in classrooms, conference rooms, and anywhere you want RS232 control over AV equipment.  
+With touchscreen ESP32 boards like the JC2432W328 (capacitive) and 2432S028R (resistive), which support native LVGL in ESPHome, we built a customizable, user-friendly control panel that integrates easily with ESPHome and Home Assistant.  
+We chose ESPHome for its popularity and maintainability, with many examples and community support already available.
 
-At its core, the system consists of:
+## 🧠 How it works
 
-- ESP32 touchscreen (capacitive or resistive) flashed with ESPHome
-- 3D-printed wall plate & breakout box for secure mounting
-- RS232 to TTL UART breakout box to communicate with projectors / TV’s
-- RJ45 Ethernet cables to connect breakout box to wall plate touchscreen
-- Generic Power supply
+The Jimmy AV Control System uses an ESP32 touchscreen panel to send RS232 commands to AV gear, integrating seamlessly with ESPHome and Home Assistant for easy automation and monitoring.
 
-By using ESPHome web flasher, setup and configuration of the Jimmy is very simple.
+At its core, the system includes:
+- ESP32 touchscreen (capacitive or resistive) flashed with ESPHome  
+- 3D-printed wall plate & breakout box for secure mounting  
+- RS232 to TTL UART breakout box  
+- RJ45 Ethernet cables to connect breakout box to wall plate touchscreen  
+- Generic DC power supply  
 
-![alt text](https://github.com/McKinnonIT/Jimmy-AV-Controller/blob/main/JimmyAVDiagram.png)
+Using the ESPHome Web Flasher makes setup simple.
 
-### Intallation:
-  1. Wire JST cable to RJ45 terminal as shown and plug into flashed touchscreen
-  2. Wire the Female DC terminal adapter, RS232 TTL Module and RJ45 terminal block and secure in printed breakout box
-  3. Secure 3D printed wallplate to wall, connect ethernet cable, screw in touchscreen then install wallplate cover
-  4. Place breakout box in secure location then connect DB9 to projector, plug in the other end of the ethernet cable and plug in power adapter
+![System Diagram](https://github.com/McKinnonIT/Jimmy-AV-Controller/blob/main/JimmyAVDiagram.png)
 
-### Flashing Touchscreen:
+## 🛠️ Installation
 
-#### Using ESPHome:
-  Ensure capacitive.yaml resistive.yaml lvgl.yaml and epsonswitch.yaml(or other projector commands) are added to the esphome/common directory.
-  1. Connect to the touchscreen using USB C cable, in  ESPhome select new device, enter desired name then connect selecting the USB serial device
-  2. Modify and add ota, api or wifi passwords/secrets as required, change logger level to NONE and add the required include yaml files
-       ``` 
-       esphome:
-         name: 
-         friendly_name: 
+1. Wire JST cable to RJ45 terminal and plug into the flashed touchscreen  
+2. Wire the female DC terminal adapter, RS232 TTL module, and RJ45 terminal block; secure inside the breakout box  
+3. Mount the 3D-printed wall plate, connect Ethernet, screw in touchscreen, and snap on the wall plate cover  
+4. Place the breakout box in a secure spot, connect the DB9 to projector, plug in Ethernet and power  
 
-       esp32:
-         board: esp32dev
-         framework:
-           type: arduino
+## 💾 Flashing Touchscreen
 
-       logger:
-         level: NONE
+### 🔌 Using ESPHome
 
-       # Enable Home Assistant API
-       api:
-       encryption:
-         key: ""
-       # Enable Over the Air flashing
-       ota:
-         - platform: esphome
-           password: !secret otapassword
+Make sure `capacitive.yaml`, `resistive.yaml`, `lvgl.yaml`, and `epsonswitch.yaml` are in the `esphome/common` directory.
 
-       wifi:
-         ssid: !secret wifi_ssid
-         password: !secret wifi_password
+1. Connect the touchscreen via USB-C  
+2. In ESPHome, create a new device, name it, and select the USB serial port  
+3. Modify the config to include secrets and relevant YAML files:
 
-       # Display and Touchscreen Config
-       <<: !include common/capacitive.yaml
+```yaml
+    esphome:  
+      name:  
+      friendly_name:  
 
-       # LVGL Graphics Display Config
-       <<: !include common/lvgl.yaml
+    esp32:  
+      board: esp32dev  
+      framework:  
+        type: arduino  
 
-       # Projector UART commands
-       <<: !include common/epsonswitch.yaml
-      ```
-   3. Install this modified yaml onto the touchscreen, the display should now work and react to user input.
+    logger:  
+      level: NONE  
 
-#### Standalone using ESPHome Web:
-  Can be used if WiFi connectivity is not required for OTA or HomeAssistant logging
-   1. Go to [web.esphome.io](https://web.esphome.io)
-   2. Connect USB cable to touchscreen and click connect
-   3. Select Install and install jimmy-av-controller.factory.bin or custom .bin file
+    api:  
+      encryption:  
+        key: ""  
 
+    ota:  
+      - platform: esphome  
+        password: !secret otapassword  
 
-       
+    wifi:  
+      ssid: !secret wifi_ssid  
+      password: !secret wifi_password  
 
+    <<: !include common/capacitive.yaml  
+    <<: !include common/lvgl.yaml  
+    <<: !include common/epsonswitch.yaml  
+```
+4. Flash this config to the touchscreen. The display should now be interactive.
 
+### 🌐 Standalone using ESPHome Web
 
+Use this if Wi-Fi or Home Assistant isn’t needed.
 
+1. Visit https://web.esphome.io  
+2. Connect USB and click **Connect**  
+3. Click **Install** and flash `jimmy-av-controller.factory.bin` or a custom `.bin`  
 
+## 🖨️ 3D Printed Parts
 
+This project includes custom 3D-printed enclosures to provide a clean and secure installation:
+
+### 🧱 Included `.stl` Files:
+- `lcd-wallplate.stl` – Main mounting frame for the ESP32 touchscreen  
+- `lcd-wallplate-cover.stl` – Snap-on faceplate cover for a polished finish  
+- `breakout-box.stl` – Compact enclosure for RS232, DC, and RJ45 connectors  
+
+### ⚙️ Printing Notes:
+- Standard **PLA settings** were used  
+- The **breakout box** may require **supports**, depending on your printer and orientation  
+- Successfully printed on:
+  - **Creality K1C**
+  - **Bambu Lab P1S**
+
+> Parts were designed for ease of assembly and professional installation appearance.
