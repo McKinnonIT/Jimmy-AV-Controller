@@ -17,7 +17,8 @@ We chose ESPHome for its popularity and maintainability, with many examples and 
 The Jimmy AV Control System uses an ESP32 touchscreen panel to send RS232 commands to AV gear, integrating seamlessly with ESPHome and Home Assistant for easy automation and monitoring.
 
 At its core, the system includes:
-- ESP32 touchscreen (capacitive JC2432W328 or resistive 2432S028R) flashed with ESPHome  
+- ESP32 touchscreen (capacitive JC2432W328 or resistive 2432S028R) flashed with ESPHome
+- LVGL customisable GUI
 - 3D-printed wall plate & breakout box for secure mounting  
 - RS232 to TTL UART breakout box  
 - RJ45 Ethernet cables to connect breakout box to wall plate touchscreen  
