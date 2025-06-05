@@ -1,4 +1,4 @@
-# 🎛️ Jimmy AV Controller
+# Jimmy AV Controller
 
 ## 🧩 Project Overview  
 The Jimmy AV Controller is an open, customizable solution for projector and AV control over RS232. It is designed to address the limitations of existing commercial systems—closed ecosystems, high costs, poor interfaces, and no easy way to monitor usage and automate groups of projectors & TVs.
