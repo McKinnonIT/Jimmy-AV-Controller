@@ -106,7 +106,7 @@ This project includes custom 3D-printed enclosures to provide a clean and secure
 - `lcd-wallplate-cover.stl` – Snap-on faceplate cover for a polished finish  
 - `breakout-box.stl` – Compact enclosure for RS232, DC, and RJ45 connectors  
 
-### ⚙️ Printing Notes:
+### 📝 Printing Notes:
 - Standard **PLA settings** were used  
 - The **breakout box** may require **supports**, depending on your printer and orientation  
 - Successfully printed on:
