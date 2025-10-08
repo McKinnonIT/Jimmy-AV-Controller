@@ -38,7 +38,7 @@ Using the ESPHome Web Flasher makes setup simple.
 - 20 AWG Ferrules
 - M2.5 10mm Screws
 - RJ45 cable (run from wall plate location to projector)
-- 3D Printed Wall Plate and Cover
+- 3D Printed Wall Plate and Cover (designed for AU Wall Plate standards)
 - 3D Printed Breakout Box
 
 ## 🛠️ Installation
@@ -103,8 +103,12 @@ This project includes custom 3D-printed enclosures to provide a clean and secure
 
 ### 🧱 Included `.stl` Files:
 - `lcd-wallplate.stl` – Main mounting frame for the ESP32 touchscreen  
-- `lcd-wallplate-cover.stl` – Snap-on faceplate cover for a polished finish  
+- `lcd-wallplate-cover.stl` – Snap-on faceplate cover for a polished finish
 - `breakout-box.stl` – Compact enclosure for RS232, DC, and RJ45 connectors  
+<p align="left">
+  <img src="https://github.com/McKinnonIT/Jimmy-AV-Controller/blob/main/wallplate-stl.png?raw=true" width="29%" />
+  <img src="https://github.com/McKinnonIT/Jimmy-AV-Controller/blob/main/breakoutbox-stl.png?raw=true" width="29%" />
+</p>
 
 ### 📝 Printing Notes:
 - Standard **PLA settings** were used  
